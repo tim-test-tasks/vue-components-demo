@@ -3,12 +3,13 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
+import tailwindcss from '@tailwindcss/vite'
 
 const isStorybook = process.env.npm_lifecycle_event === 'storybook'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue(), !isStorybook && vueDevTools()],
+  plugins: [vue(), !isStorybook && vueDevTools(), tailwindcss()],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
