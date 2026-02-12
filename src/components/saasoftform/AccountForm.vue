@@ -143,6 +143,7 @@ const autoResize = (e: Event) => {
 
       <Input
         v-model="form.login"
+        placeholder="Логин"
         :class="[
           'w-full',
           errors.login && 'ring-1 ring-red-500',
@@ -159,6 +160,7 @@ const autoResize = (e: Event) => {
       <Input
         v-if="form.type === 'Локальная'"
         v-model="form.password"
+        placeholder="Пароль"
         type="password"
         class="w-full"
         :class="errors.password && 'ring-1 ring-red-500'"
